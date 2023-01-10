@@ -22,7 +22,7 @@ const Home: NextPage = () => {
               <div className="flex items-center justify-center md:col-span-3">
                 <Image
                   src="/me.jpg"
-                  className="h-32 w-32 overflow-hidden rounded-full md:col-span-3 md:h-72 md:w-72"
+                  className="h-40 w-40 overflow-hidden rounded-full md:col-span-3 md:h-72 md:w-72"
                   alt="Nice pic of me"
                   width={300}
                   height={390}
@@ -49,6 +49,31 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* the blogs posts */}
+      <div className="bg-gray-100">
+        <div className="flex items-center justify-center p-8">
+          <h1 className="border-b-4 border-blue-600 font-serif text-4xl font-bold sm:text-5xl">
+            Featured
+          </h1>
+        </div>
+        <div id="featured-posts">
+          {/* {data.allStrapiBlogPosts.edges.map((post) => ( */}
+          {/*   <BlogPost key={post.node.strapiId} post={post}></BlogPost> */}
+          {/* ))} */}
+        </div>
+        <div className="m-auto my-8 flex max-w-sm flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200">
+          <p className="text-xl font-bold">Want to see more ?</p>
+          <Link href="/posts/">
+            <button className="mt-4 transform rounded-lg bg-indigo-700 p-2 px-4 text-lg font-bold text-white duration-300 hover:-translate-y-1 hover:bg-indigo-800">
+              All Posts
+            </button>
+          </Link>
+        </div>
+
+        {/* separator */}
+        <div className="h-1 bg-gray-100"></div>
       </div>
     </>
   );
