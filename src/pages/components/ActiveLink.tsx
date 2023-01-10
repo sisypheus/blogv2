@@ -31,8 +31,8 @@ const ActiveLink = ({
 
       const newClassName =
         linkPathname === activePathname
-          ? `${className} ${activeClassName}`.trim()
-          : className;
+          ? `${className || ''} ${activeClassName || ''}`.trim()
+          : className || '';
 
       if (newClassName !== computedClassName) {
         setComputedClassName(newClassName);
@@ -49,11 +49,10 @@ const ActiveLink = ({
   ]);
 
   return (
-    <Link className={computedClassName} {...props} href={props.href ?? ''}>
+    <Link className={computedClassName} {...props} href={props.href ?? ""}>
       {children}
     </Link>
   );
 };
 
 export default ActiveLink;
-

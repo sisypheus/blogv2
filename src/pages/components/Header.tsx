@@ -106,7 +106,7 @@ const Header: NextPage = () => {
               <div className="h-full transform rounded border bg-gray-100 pt-4 pb-8 pl-8 pr-4 shadow-sm transition-all delay-150">
                 <div className="mb-4 flex items-center justify-between space-x-4">
                   <div>
-                    <a
+                    <Link
                       href="/"
                       aria-label="Company"
                       title="Company"
@@ -115,7 +115,7 @@ const Header: NextPage = () => {
                       <span className="text-center text-xl font-bold uppercase tracking-wide text-gray-800">
                         Theo Poette
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
