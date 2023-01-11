@@ -28,7 +28,7 @@ const Header: NextPage = () => {
     >
       <div className="m-auto flex items-center justify-between">
         <p
-          className={`flex-1 font-bold ${
+          className={`flex-1 flex items-center font-bold ${
             location.pathname === "/"
               ? top
                 ? "text-white"
@@ -36,7 +36,7 @@ const Header: NextPage = () => {
               : "text-black"
           } whitespace-nowrap text-3xl sm:text-4xl`}
         >
-          <Link className="text-3xl font-semibold tracking-tight" href="/">
+          <Link className="text-3xl font-semibold items-center tracking-tight" href="/">
             Theo Poette
           </Link>
         </p>
