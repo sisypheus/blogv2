@@ -3,12 +3,13 @@ title: 'Building my blog'
 date: '18/12/2021'
 slug: 'building-my-blog'
 description: 'The process of how I build my first blog, and my development story.'
+image: '/building-my-blog.jpg'
 ---
 
 # Introduction
 Welcome to the first post of this site. (And hopefully not the last). This post will be the story of how I built this blog, from development to deployment, and even content management.
 
-This project has been made because I recently made the acquisition of my domain name theopoette.me. I played around with the DNS, and I figured it was very easy to create subdomains, so I made a project for which it would be useful to use a subdomain.
+This project has been made because I recently made the acquisition of my domain name [theopoette.me](https://theopoette.me). I played around with the DNS, and I figured it was very easy to create subdomains, so I made a project for which it would be useful to use a subdomain.
 
 This project wasn't as easy as I thought it would be, I mean a blog? Yeah, what an easy side project... At first sight, compared to a complete social media app, it looks fairly easy.
 
@@ -35,4 +36,4 @@ The deployment was a way more streamlined process, as I'm getting more and more 
 -----
 
 # Conclusion
-The idea of this website came because I just discovered something new, and I thought it would be easy + I would develop my skills. It turned out that it was a painful task, and that I would have been better of challenging myself on some other project, with technologies I know would be more compatible. I wouldn't recommend building a blog if the only thing you want is to develop your skills, but it's always a nice thing to showcase for potential recruiters, and it improves your presence online. On this note, thanks for reading me, you can find the code for my blog here, have a good day/night.
+The idea of this website came because I just discovered something new, and I thought it would be easy + I would develop my skills. It turned out that it was a painful task, and that I would have been better of challenging myself on some other project, with technologies I know would be more compatible. I wouldn't recommend building a blog if the only thing you want is to develop your skills, but it's always a nice thing to showcase for potential recruiters, and it improves your presence online. On this note, thanks for reading me, you can find the code for my blog [here](https://github.com/sisypheus/blogv2), have a good day/night.

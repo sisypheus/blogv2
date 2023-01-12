@@ -1,4 +1,3 @@
-/* import * as React from "react"; */
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,16 +9,18 @@ const PostCard = ({ post }: any) => {
     <div className="flex items-center justify-center p-3">
       <Link href={`/posts/${post?.slug}/`}>
         <div className="cursor-pointer rounded-2xl bg-white shadow-xl ring-1 ring-gray-200">
-          <div className="grid grid-flow-row sm:grid-flow-col sm:grid-cols-5 sm:gap-8">
+          <div className="grid grid-flow-row sm:grid-flow-col sm:grid-cols-3">
             {image && (
               <Image
-                className="rounded-t-2xl sm:col-span-2 sm:rounded-l-2xl sm:rounded-r-none"
+                className="rounded-t-2xl sm:col-span-1 sm:rounded-l-2xl sm:rounded-r-none w-full"
                 src={image}
                 alt="Blog post cover image"
+                width={300}
+                height={200}
               />
             )}
             {/* title and description of the post */}
-            <div className="prose-md flex w-full flex-col space-y-2 p-4 sm:col-span-3">
+            <div className="prose-md flex w-full flex-col space-y-2 p-8 sm:col-span-2">
               <h1 className="text-3xl font-bold tracking-tight">
                 {post.title}
               </h1>

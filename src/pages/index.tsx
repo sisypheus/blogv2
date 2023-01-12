@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <div
         className="h-screen w-full"
-        style={{ background: `url(${"/layered-waves.svg"}) center/cover` }}
+        style={{ background: `url("/layered-waves.svg") center/cover` }}
       >
         {/* main part of the page */}
         <div>
