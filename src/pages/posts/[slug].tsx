@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { GetStaticPaths } from "next";
 
 const BlogPost = ({ post }: any) => {
+  if (!post) return null;
   const image = post?.image;
   return (
     <div className="flex items-center justify-center p-3">
@@ -50,7 +51,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
 };
 
 export async function getStaticProps(context: any) {
-  const post = getPostBySlug(context.slug);
+  const post = getPostBySlug(context.params.slug);
   return {
     props: {
       post,
