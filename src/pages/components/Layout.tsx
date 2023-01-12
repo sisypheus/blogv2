@@ -4,7 +4,7 @@ import Header from "./Header";
 
 const Layout: NextPage = ({ children }: any) => {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-[#F1F5F9]">
       <div className="mx-auto">
         <div className="mx-auto flex min-h-screen flex-col">
           <Header />

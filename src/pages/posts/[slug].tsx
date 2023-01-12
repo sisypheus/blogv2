@@ -1,38 +1,50 @@
-import * as React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { getPostBySlug, getSortedPostsData } from "../../../lib/posts";
-import { useRouter } from "next/router";
 import { GetStaticPaths } from "next";
+import ReactMarkdown from "react-markdown";
 
-const BlogPost = ({ post }: any) => {
+const Post = ({ post }: any) => {
   if (!post) return null;
   const image = post?.image;
+
   return (
-    <div className="flex items-center justify-center p-3">
-      <Link href={`/post/${post?.slug}/`}>
-        <div className="cursor-pointer rounded-2xl bg-white shadow-xl ring-1 ring-gray-200">
-          <div className="grid grid-flow-row sm:grid-flow-col sm:grid-cols-5 sm:gap-8">
-            {/* cover image of the post */}
-            {image && (
-              <Image
-                className="rounded-t-2xl sm:col-span-2 sm:rounded-l-2xl sm:rounded-r-none"
-                src={image}
-                alt="Blog post cover image"
-              />
-            )}
-            {/* title and description of the post */}
-            <div className="prose-md flex w-full flex-col space-y-2 p-4 sm:col-span-3">
-              <h1 className="text-3xl font-bold tracking-tight">
-                {/* {post.node.Title} */}
-              </h1>
-              <p className="flex h-full items-center align-middle font-medium text-gray-700">
-                {/* {post.node.Description} */}
-              </p>
-            </div>
+    <div className="m-auto max-w-5xl flex-col items-center justify-center px-6 md:px-0">
+      <div className="space-y-2 p-10 text-center">
+        <h1>{post.matter?.date}</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight">
+          {post.matter.title}
+        </h1>
+        <div className="flex items-center justify-center space-x-4">
+          <Image
+            src="/me.jpg"
+            alt="Picture of author"
+            className="h-12 w-12 rounded-full"
+            width={48}
+            height={48}
+          />
+          <div>
+            <p className="text-sm font-medium tracking-tight text-gray-800">
+              Theo Poette
+            </p>
+            <a
+              style={{ color: "rgb(14,165,233)" }}
+              href="https://github.com/sisypheus"
+            >
+              @sisypheus
+            </a>
           </div>
         </div>
-      </Link>
+      </div>
+      <div className="m-auto md:p-8">
+        {/* <Image */}
+        {/*   src={coverImage} */}
+        {/*   style={{ objectFit: "cover", objectPosition: "center" }} */}
+        {/*   alt="Blog cover image" */}
+        {/* /> */}
+      </div>
+      <div className="prose m-auto mb-8 max-w-3xl">
+        <ReactMarkdown children={post.body} className="prose mx-auto" />
+      </div>
     </div>
   );
 };
@@ -43,7 +55,6 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   paths.map((path: any) => {
     prerender.push({ params: { slug: path.slug } });
   });
-  console.log(prerender, "prerender");
   return {
     paths: prerender,
     fallback: false,
@@ -59,4 +70,4 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default BlogPost;
+export default Post;

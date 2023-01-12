@@ -29,7 +29,7 @@ const SearchBar = ({ filterPosts }: any) => {
   return (
     <div className="m-auto flex max-w-2xl items-center justify-center p-6 pt-4 sm:p-10">
       <form onSubmit={(e) => e.preventDefault()}>
-        <div className="flex items-center justify-between border-b-2 border-gray-300 bg-white px-2 rounded">
+        <div className="flex items-center justify-between border-b-2 border-gray-300 bg-white px-2 rounded-lg">
           <input
             ref={searchInput}
             value={searchTerm}

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Post from "../posts/[slug]";
 import SearchBar from "../components/SearchBar";
 import { getSortedPostsData } from "../../../lib/posts";
+import PostCard from "../components/PostCard";
 
 const AllPosts = ({ allPostsData }: any) => {
   const [blogPosts, setBlogPosts] = useState(allPostsData);
@@ -9,7 +10,7 @@ const AllPosts = ({ allPostsData }: any) => {
   const displayPosts = () => {
     if (blogPosts.length > 0) {
       return blogPosts.map((post: any, index: number) => (
-        <Post key={index} post={post} />
+        <PostCard key={index} post={post} />
       ));
     } else {
       return (
