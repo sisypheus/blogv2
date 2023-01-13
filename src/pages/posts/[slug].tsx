@@ -13,6 +13,7 @@ const Post = ({ post }: any) => {
       <Head>
         <title>Theo Poette - {post.matter.title}</title>
         <meta name="description" content={post.matter.description} />
+        <meta name="robots" content="index, follow" key="robots" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -47,7 +48,7 @@ const Post = ({ post }: any) => {
           <Image
             src={image}
             style={{ objectFit: "cover", objectPosition: "center" }}
-            className="rounded w-92 h-92 m-auto"
+            className="w-92 h-92 m-auto rounded"
             alt="Blog cover image"
             width={900}
             height={200}
