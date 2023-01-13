@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Post from "../posts/[slug]";
 import SearchBar from "../components/SearchBar";
 import { getSortedPostsData } from "../../../lib/posts";
 import PostCard from "../components/PostCard";
@@ -12,13 +11,12 @@ const AllPosts = ({ allPostsData }: any) => {
       return blogPosts.map((post: any, index: number) => (
         <PostCard key={index} post={post} />
       ));
-    } else {
-      return (
-        <div className="flex items-center justify-center">
-          <p className="prose-xl font-semibold">No blog post found.</p>
-        </div>
-      );
     }
+    return (
+      <div className="flex items-center justify-center">
+        <p className="prose-xl font-semibold">No blog post found.</p>
+      </div>
+    );
   };
 
   const filterPostsFromSearchBar = (filter: string) => {

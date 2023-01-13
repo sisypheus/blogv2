@@ -2,8 +2,10 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { getSortedPostsData } from "../../lib/posts";
+import PostCard from "./components/PostCard";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ posts }: any) => {
   return (
     <>
       <Head>
@@ -15,10 +17,9 @@ const Home: NextPage = () => {
         className="h-screen w-full"
         style={{ background: `url("/layered-waves.svg") center/cover` }}
       >
-        {/* main part of the page */}
         <div>
           <div className="flex items-center justify-center">
-            <div className="absolute top-[40%] -mt-20 md:grid md:grid-cols-6 md:space-x-4">
+            <div className="absolute top-1/3 -mt-20 sm:top-[40%] md:grid md:grid-cols-6 md:space-x-4">
               <div className="flex items-center justify-center md:col-span-3">
                 <Image
                   src="/me.jpg"
@@ -51,7 +52,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* the blogs posts */}
       <div className="bg-gray-100">
         <div className="flex items-center justify-center p-8">
           <h1 className="border-b-4 border-blue-600 font-serif text-4xl font-bold sm:text-5xl">
@@ -59,24 +59,33 @@ const Home: NextPage = () => {
           </h1>
         </div>
         <div id="featured-posts">
-          {/* {data.allStrapiBlogPosts.edges.map((post) => ( */}
-          {/*   <BlogPost key={post.node.strapiId} post={post}></BlogPost> */}
-          {/* ))} */}
+          {posts.map((post: any) => (
+            <PostCard key={post.id} post={post} />
+          ))}
         </div>
-        <div className="m-auto my-8 flex max-w-sm flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200">
-          <p className="text-xl font-bold">Want to see more ?</p>
-          <Link href="/posts/">
-            <button className="mt-4 transform rounded-lg bg-indigo-700 p-2 px-4 text-lg font-bold text-white duration-300 hover:-translate-y-1 hover:bg-indigo-800">
-              All Posts
-            </button>
-          </Link>
+        <div className="mx-4">
+          <div className="m-auto my-8 flex max-w-sm flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200">
+            <p className="text-xl font-bold">Want to see more ?</p>
+            <Link href="/posts/">
+              <button className="mt-4 transform rounded-lg bg-indigo-700 p-2 px-4 text-lg font-bold text-white duration-300 hover:-translate-y-1 hover:bg-indigo-800">
+                All Posts
+              </button>
+            </Link>
+          </div>
         </div>
-
-        {/* separator */}
-        <div className="h-1 bg-gray-100"></div>
       </div>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const posts = getSortedPostsData();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default Home;
