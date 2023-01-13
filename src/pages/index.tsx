@@ -11,7 +11,11 @@ const Home: NextPage = ({ posts }: any) => {
       <Head>
         <title>Theo Poette - Blog</title>
         <meta name="description" content="Official blog of Theo Poette" />
-        <meta name="robots" content="index, follow" key="robots"/>
+        <meta name="robots" content="index, follow" key="robots" />
+        <meta
+          name="google-site-verification"
+          content="LPcCRTVw2AAj2rvgT4_mcz9AOEi-VbTdHUMpLvyQ2H8"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
