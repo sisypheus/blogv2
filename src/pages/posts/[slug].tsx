@@ -5,13 +5,13 @@ import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 const Post = ({ post }: any) => {
-  if (!post) return null;
   const image = post?.matter?.image;
+  const title = post?.matter?.title;
 
   return (
     <>
       <Head>
-        <title>Theo Poette - {post.matter.title}</title>
+        <title>{`Theo Poette - ${title}`}</title>
         <meta name="description" content={post.matter.description} />
         <meta name="robots" content="index, follow" key="robots" />
         <link rel="icon" href="/favicon.ico" />

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedPostsData } from "../../lib/posts";
-import PostCard from "./components/PostCard";
+import PostCard from "../components/PostCard";
 
 const Home: NextPage = ({ posts }: any) => {
   return (
@@ -32,6 +32,7 @@ const Home: NextPage = ({ posts }: any) => {
                   alt="Nice pic of me"
                   width={300}
                   height={390}
+                  priority
                 />
               </div>
               <div className="col-span-3 flex items-center p-4 text-center">

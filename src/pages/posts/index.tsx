@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../../components/SearchBar";
 import { getSortedPostsData } from "../../../lib/posts";
-import PostCard from "../components/PostCard";
+import PostCard from "../../components/PostCard";
+import Head from "next/head";
 
 const AllPosts = ({ allPostsData }: any) => {
   const [blogPosts, setBlogPosts] = useState(allPostsData);
@@ -28,6 +29,11 @@ const AllPosts = ({ allPostsData }: any) => {
 
   return (
     <>
+      <Head>
+        <title>Theo Poette - Posts</title>
+        <meta name="description" content="All my blog posts" />
+        <meta name="robots" content="index, follow" key="robots" />
+      </Head>
       <SearchBar filterPosts={filterPostsFromSearchBar} />
       {displayPosts()}
       <div className="pb-8"></div>
