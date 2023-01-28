@@ -30,6 +30,7 @@ const Post = ({ post }: any) => {
               className="h-12 w-12 rounded-full"
               width={48}
               height={48}
+              priority
             />
             <div>
               <p className="text-sm font-medium tracking-tight text-gray-800">

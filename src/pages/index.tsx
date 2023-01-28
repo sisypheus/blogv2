@@ -6,6 +6,8 @@ import { getSortedPostsData } from "../../lib/posts";
 import PostCard from "../components/PostCard";
 
 const Home: NextPage = ({ posts }: any) => {
+  const lastPost = posts.at(0);
+
   return (
     <>
       <Head>
@@ -65,9 +67,7 @@ const Home: NextPage = ({ posts }: any) => {
           </h1>
         </div>
         <div id="featured-posts">
-          {posts.map((post: any) => (
-            <PostCard key={post.id} post={post} />
-          ))}
+          <PostCard key={lastPost.id} post={lastPost} />
         </div>
         <div className="mx-4">
           <div className="m-auto my-8 flex max-w-sm flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200">
